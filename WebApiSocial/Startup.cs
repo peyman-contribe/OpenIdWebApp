@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Core;
 using OpenIddict.Models;
 using WebApiSocial.Data;
@@ -30,19 +31,15 @@ namespace WebApiSocial
         {
             services.AddMvc();
 
-
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 options.UseOpenIddict();
             });
 
-
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
-
-
 
             // Configure Identity to use the same JWT claims as OpenIddict instead
             // of the legacy WS-Federation claims it uses by default (ClaimTypes),
@@ -70,7 +67,7 @@ namespace WebApiSocial
                 options.EnableAuthorizationEndpoint("/connect/authorize")
                     .EnableLogoutEndpoint("/connect/logout")
                     .EnableTokenEndpoint("/connect/token");
-                       //.EnableUserinfoEndpoint("/api/userinfo");
+                //  .EnableUserinfoEndpoint("/api/userinfo");
 
                 // Note: the Mvc.Client sample only uses the authorization code flow but you can enable
                 // the other flows if you need to support implicit, password or client credentials.
@@ -90,12 +87,24 @@ namespace WebApiSocial
                 // Note: to use JWT access tokens instead of the default
                 // encrypted format, the following lines are required:
                 //
-                //options.UseJsonWebTokens();
-                //options.AddEphemeralSigningKey();
+                options.UseJsonWebTokens();
+                options.AddEphemeralSigningKey();
             });
 
 
+
             services.AddAuthentication()
+                     //.AddJwtBearer(options =>
+                     //{
+                     //    options.Authority = "https://localhost:44342/";
+                     //    options.Audience = "resource_server";
+                     //    options.RequireHttpsMetadata = false;
+                     //    options.TokenValidationParameters = new TokenValidationParameters
+                     //    {
+                     //        NameClaimType = OpenIdConnectConstants.Claims.Subject,
+                     //        RoleClaimType = OpenIdConnectConstants.Claims.Role
+                     //    };
+                     //})
                 .AddGoogle(options =>
                 {
                     options.ClientId = Configuration["Authentication:Google:ClientId"];
@@ -109,8 +118,6 @@ namespace WebApiSocial
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -126,6 +133,7 @@ namespace WebApiSocial
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
 
 
             app.UseCors(builder => builder
@@ -173,7 +181,7 @@ namespace WebApiSocial
                             OpenIddictConstants.Permissions.Endpoints.Logout,
                             OpenIddictConstants.Permissions.Endpoints.Token,
                             OpenIddictConstants.Permissions.GrantTypes.AuthorizationCode,
-                            OpenIddictConstants.Permissions.GrantTypes.RefreshToken
+                            OpenIddictConstants.Permissions.GrantTypes.RefreshToken,
                         }
                     };
 

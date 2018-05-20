@@ -30,7 +30,9 @@ namespace Client.Controllers
         [Authorize, HttpPost("~/")]
         public async Task<ActionResult> Index(CancellationToken cancellationToken)
         {
+            
             var token = await HttpContext.GetTokenAsync(CookieAuthenticationDefaults.AuthenticationScheme, "access_token");
+
             if (string.IsNullOrEmpty(token))
             {
                 throw new InvalidOperationException("The access token cannot be found in the authentication ticket. " +
