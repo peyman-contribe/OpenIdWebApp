@@ -14,7 +14,8 @@
       "launchUrl": "https://localhost:44342/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "use64Bit": true
     },
     "WebApiSocial": {
       "commandName": "Project",

@@ -10,3 +10,15 @@ C:\Users\Milo\source\repos\WebApiSocial\WebApiSocial\obj\Debug\netcoreapp2.0\Use
 C:\Users\Milo\source\repos\WebApiSocial\WebApiSocial\bin\Debug\netcoreapp2.0\WebApiSocial.pdb
 C:\Users\Milo\source\repos\WebApiSocial\WebApiSocial\obj\Debug\netcoreapp2.0\WebApiSocial.dll
 C:\Users\Milo\source\repos\WebApiSocial\WebApiSocial\obj\Debug\netcoreapp2.0\WebApiSocial.pdb
+D:\Source\OpenIdWebApp\WebApiSocial\bin\Debug\netcoreapp2.0\WebApiSocial.deps.json
+D:\Source\OpenIdWebApp\WebApiSocial\bin\Debug\netcoreapp2.0\WebApiSocial.runtimeconfig.json
+D:\Source\OpenIdWebApp\WebApiSocial\bin\Debug\netcoreapp2.0\WebApiSocial.runtimeconfig.dev.json
+D:\Source\OpenIdWebApp\WebApiSocial\bin\Debug\netcoreapp2.0\WebApiSocial.dll
+D:\Source\OpenIdWebApp\WebApiSocial\bin\Debug\netcoreapp2.0\WebApiSocial.pdb
+D:\Source\OpenIdWebApp\WebApiSocial\obj\Debug\netcoreapp2.0\WebApiSocial.csprojAssemblyReference.cache
+D:\Source\OpenIdWebApp\WebApiSocial\obj\Debug\netcoreapp2.0\WebApiSocial.csproj.CoreCompileInputs.cache
+D:\Source\OpenIdWebApp\WebApiSocial\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\Source\OpenIdWebApp\WebApiSocial\obj\Debug\netcoreapp2.0\WebApiSocial.AssemblyInfoInputs.cache
+D:\Source\OpenIdWebApp\WebApiSocial\obj\Debug\netcoreapp2.0\WebApiSocial.AssemblyInfo.cs
+D:\Source\OpenIdWebApp\WebApiSocial\obj\Debug\netcoreapp2.0\WebApiSocial.dll
+D:\Source\OpenIdWebApp\WebApiSocial\obj\Debug\netcoreapp2.0\WebApiSocial.pdb

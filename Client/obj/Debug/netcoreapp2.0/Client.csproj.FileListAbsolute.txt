@@ -1,0 +1,12 @@
+D:\Source\OpenIdWebApp\Client\bin\Debug\netcoreapp2.0\Client.deps.json
+D:\Source\OpenIdWebApp\Client\bin\Debug\netcoreapp2.0\Client.runtimeconfig.json
+D:\Source\OpenIdWebApp\Client\bin\Debug\netcoreapp2.0\Client.runtimeconfig.dev.json
+D:\Source\OpenIdWebApp\Client\bin\Debug\netcoreapp2.0\Client.dll
+D:\Source\OpenIdWebApp\Client\obj\Debug\netcoreapp2.0\Client.csproj.CoreCompileInputs.cache
+D:\Source\OpenIdWebApp\Client\obj\Debug\netcoreapp2.0\Client.AssemblyInfoInputs.cache
+D:\Source\OpenIdWebApp\Client\obj\Debug\netcoreapp2.0\Client.AssemblyInfo.cs
+D:\Source\OpenIdWebApp\Client\bin\Debug\netcoreapp2.0\Client.pdb
+D:\Source\OpenIdWebApp\Client\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\Source\OpenIdWebApp\Client\obj\Debug\netcoreapp2.0\Client.dll
+D:\Source\OpenIdWebApp\Client\obj\Debug\netcoreapp2.0\Client.pdb
+D:\Source\OpenIdWebApp\Client\obj\Debug\netcoreapp2.0\Client.csprojAssemblyReference.cache
