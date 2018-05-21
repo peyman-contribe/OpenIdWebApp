@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading;
 using System.Threading.Tasks;
 using AspNet.Security.OpenIdConnect.Primitives;
 using Microsoft.AspNetCore.Builder;
@@ -8,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Core;
 using OpenIddict.Models;
 using WebApiSocial.Data;
@@ -87,24 +85,11 @@ namespace WebApiSocial
                 // Note: to use JWT access tokens instead of the default
                 // encrypted format, the following lines are required:
                 //
-                options.UseJsonWebTokens();
-                options.AddEphemeralSigningKey();
+                //options.UseJsonWebTokens();
+                //options.AddEphemeralSigningKey();
             });
 
-
-
             services.AddAuthentication()
-                     //.AddJwtBearer(options =>
-                     //{
-                     //    options.Authority = "https://localhost:44342/";
-                     //    options.Audience = "resource_server";
-                     //    options.RequireHttpsMetadata = false;
-                     //    options.TokenValidationParameters = new TokenValidationParameters
-                     //    {
-                     //        NameClaimType = OpenIdConnectConstants.Claims.Subject,
-                     //        RoleClaimType = OpenIdConnectConstants.Claims.Role
-                     //    };
-                     //})
                 .AddGoogle(options =>
                 {
                     options.ClientId = Configuration["Authentication:Google:ClientId"];
@@ -133,8 +118,7 @@ namespace WebApiSocial
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-
-
+            
 
             app.UseCors(builder => builder
                 .AllowAnyOrigin()

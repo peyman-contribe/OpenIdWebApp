@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNet.Security.OAuth.Validation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -10,12 +11,12 @@ namespace WebApiSocial.Controllers
 {
   
     [Authorize]
-    [Produces("application/json")]
     [Route("api/Default")]
     public class DefaultController : Controller
     {
         // GET: api/Default
         [HttpGet]
+        [Authorize(AuthenticationSchemes = OAuthValidationDefaults.AuthenticationScheme)]
         public IActionResult Get()
         {
 

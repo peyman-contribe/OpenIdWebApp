@@ -39,7 +39,7 @@ namespace Client.Controllers
                                                     "Make sure that SaveTokens is set to true in the OIDC options.");
             }
 
-            var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44342/api/default");
+            var request = new HttpRequestMessage(HttpMethod.Get, "https://localhost:44342/api/message1");
             request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
             var response = await _client.SendAsync(request, cancellationToken);
